@@ -113,5 +113,5 @@ end
 
 -- Character
 function addon.GetPlayerClass()
-    return UnitClass("player")[1];
+    return UnitClass("player");
 end

@@ -11,12 +11,6 @@ end
 
 
 function SniperFrame:MERCHANT_SHOW()
-    Debug("MERCHANT_SHOW", "Merchant Shown")
-    Debug(addon.GetPlayerClass(), "Player Class")
-    Debug(addon.GetItemsFromBags(), "Items from Bags")
-    local merchantOpen = MerchantFrame:IsShown()
-    Debug(merchantOpen, "merchant open")
-
     local inventory = addon.GetItemsFromBags();
 
     for i=0,addon.LARGEST_BAG,1 do
