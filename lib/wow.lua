@@ -106,8 +106,8 @@ function addon.GetItemsFromBags()
     return items
 end
 
-function addon.sellItem(item)
-    PickupItem(item)
+function addon.sellBagItem(container, i)
+    C_Container.PickupContainerItem(container, i)
     SellCursorItem()
 end
 

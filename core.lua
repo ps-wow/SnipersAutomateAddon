@@ -27,10 +27,12 @@ function SniperFrame:MERCHANT_SHOW()
                 -- Sell low ilvl armor
                 if item.itemType == "Armor" then
                     if tonumber(item.ilvl) < tonumber(addon.VENDOR_ILVL) then
-                        --C_Container.UseContainerItem(container, i);
-                        C_Container.PickupContainerItem(container, i)
-                        SellCursorItem()
+                        addon.sellBagItem(container, i)
                     end
+                end
+
+                if item.itemSubType == "Artifact Relic" then
+                    addon.sellBagItem(container, i)
                 end
 
             end
