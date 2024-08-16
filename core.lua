@@ -19,9 +19,12 @@ function SniperFrame:MERCHANT_SHOW()
                 local item = inventory[container][i];
 
                 -- Sell low ilvl armor
-                if item.itemType == "Armor" then
+                if item.itemType == "Armor" or item.itemType == "Weapon" then
                     if tonumber(item.ilvl) < tonumber(addon.VENDOR_ILVL) then
-                        addon.sellBagItem(container, i)
+                        -- Don't sell BoE
+                        if (item.itemInfo.isBound == true) or addon.SELL_BOE == true then
+                            addon.sellBagItem(container, i)
+                        end
                     end
                 end
 
