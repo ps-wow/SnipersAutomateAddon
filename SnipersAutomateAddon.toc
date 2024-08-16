@@ -1,0 +1,14 @@
+## Interface: 110000
+## Title: Sniper's Automation Addon
+## Notes: Automate various common tasks
+
+## IconTexture: Interface\ICONS\Inv_misc_rune_01
+
+## Version: 1.0.0
+## Author: PrivateSniper
+## X-Date: 2024-04-06T11:04:40Z
+## X-Category: Bags & Inventory
+
+variables.lua
+lib\wow.lua
+core.lua
