@@ -7,7 +7,7 @@ addon.SELL_BOE = true
 
 local autosell = {
     -- WoD
-    --- Blood Cards
+    --- Blood Cards (Inscription)
     [113348] = true,
     [113347] = true,
     [113346] = true,
@@ -19,4 +19,17 @@ local autosell = {
     [113345] = true,
 }
 
+-- TODO: This doesn't work yet
+local autodelete = {
+    -- WoD
+    [113289] = true, -- Volatile Crystal (Inscription)
+    -- Other
+    [97985] = true, -- Dusty Old Robot
+}
+
+local sellprotect = {
+    [63353] = true, -- Shroud of Cooperation
+}
+
 addon.autosell = autosell
+addon.autodelete = autodelete

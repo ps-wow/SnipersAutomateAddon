@@ -107,8 +107,15 @@ function addon.GetItemsFromBags()
 end
 
 function addon.sellBagItem(container, i)
+    ClearCursor()
     C_Container.PickupContainerItem(container, i)
     SellCursorItem()
+end
+
+function addon.deleteBagItem(container, i)
+    ClearCursor()
+    -- C_Container.PickupContainerItem(container, i)
+    -- DeleteCursorItem()
 end
 
 -- Character

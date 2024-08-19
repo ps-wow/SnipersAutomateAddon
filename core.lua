@@ -19,6 +19,11 @@ function SniperFrame:MERCHANT_SHOW()
                 local item = inventory[container][i];
                 local itemID = item.itemInfo.itemID
 
+                -- Don't sell protected items
+                if addon.sellprotect and (addon.sellprotect[itemID] == true) then
+                    return
+                end
+
                 -- Sell low ilvl armor
                 if item.itemType == "Armor" or item.itemType == "Weapon" then
                     if tonumber(item.ilvl) < tonumber(addon.VENDOR_ILVL) then
@@ -37,6 +42,10 @@ function SniperFrame:MERCHANT_SHOW()
                 -- Sell manually typed items
                 if addon.autosell and (addon.autosell[itemID] == true) then
                     addon.sellBagItem(container, i)
+                end
+
+                if addon.autodelete and (addon.autodelete[itemID] == true) then
+                    addon.deleteBagItem(container, i)
                 end
             end
         end
