@@ -17,6 +17,7 @@ function SniperFrame:MERCHANT_SHOW()
         for container=0,4,1 do
             if inventory[container][i] ~= nil then
                 local item = inventory[container][i];
+                local itemID = item.itemInfo.itemID
 
                 -- Sell low ilvl armor
                 if item.itemType == "Armor" or item.itemType == "Weapon" then
@@ -28,10 +29,15 @@ function SniperFrame:MERCHANT_SHOW()
                     end
                 end
 
+                -- Sell old relics
                 if item.itemSubType == "Artifact Relic" then
                     addon.sellBagItem(container, i)
                 end
 
+                -- Sell manually typed items
+                if addon.autosell and (addon.autosell[itemID] == true) then
+                    addon.sellBagItem(container, i)
+                end
             end
         end
     end
