@@ -33,3 +33,4 @@ local sellprotect = {
 
 addon.autosell = autosell
 addon.autodelete = autodelete
+addon.sellprotect = sellprotect
