@@ -17,6 +17,8 @@ local autosell = {
     [113342] = true,
     [113344] = true,
     [113345] = true,
+    [113352] = true,
+    [113351] = true,
 }
 
 -- TODO: This doesn't work yet
